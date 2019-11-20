@@ -29,7 +29,9 @@
 
 /* Define what a socket descriptor is based on platform */
 #ifdef _WIN32
+#ifndef NOMINMAX
 #define NOMINMAX
+#endif
 #include <WinSock2.h>
 #define LIBUS_SOCKET_DESCRIPTOR SOCKET
 #define WIN32_EXPORT __declspec(dllexport)

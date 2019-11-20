@@ -24,9 +24,12 @@
 // here everything about the syscalls are inline-wrapped and included
 
 #ifdef _WIN32
+#ifndef NOMINMAX
 #define NOMINMAX
+#endif
 #include <WinSock2.h>
 #include <Ws2tcpip.h>
+#include <stdio.h>
 #pragma comment(lib, "ws2_32.lib")
 #define SETSOCKOPT_PTR_TYPE const char *
 #define LIBUS_SOCKET_ERROR INVALID_SOCKET
